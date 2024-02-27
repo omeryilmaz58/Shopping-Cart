@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- FancyBox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Your existing HTML code -->
+    <!-- Nav -->
+    <nav class="navbar navbar-light bg-light fixed-top bg-faded" style="background-color:#f2f2f2">
+        <div class="row">
+            <a class="navbar-title align-self-center">ORKA BANYO</a>
+            <div class="col" align="right">
+                <div class="category-select">
+                    <label for="category-selector">KATEGORİ:</label>
+                    <select id="category-selector">
+                        <option value="all">TÜMÜ</option>
+                        <!-- Categories will be dynamically added here -->
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="container-fluid">
+        <div class="row" id="row-main">
+            <div class="col-sm-7" id="list">
+                <div id="product-list" class="row">
+                </div>
+            </div>
+            <div class="col-sm-7" id="address" align="right" style="display:none">
+                <form>
+                    <div class="form-group" align="left">
+                        <label for="inputAddress">Adres</label>
+                        <textarea class="form-control" id="inputAddress" placeholder="Adresinizi yazınız." rows="3" style="resize: none;"></textarea>
+                    </div>
+                    <div class="form-group" align="left">
+                        <label for="inputPhone">Telefon Numarası</label>
+                        <input type="number" class="form-control" id="inputPhone" placeholder="Telefon numaranızı yazınız.">
+                    </div>
+                    <div class="form-group" align="left">
+                        <label for="inputMail">E-mail Adresi</label>
+                        <input type="email" class="form-control" id="inputMail" placeholder="E-mail adresinizi giriniz.">
+                    </div>
+                </form>
+                <a href="#" class="btn btn-secondary" style="margin-bottom:20px; width:7em;" id="backButton"> Geri Dön </a>
+            </div>
+            <div class="col-sm-5">
+                <div class="modal-content" style="border-radius:8px">
+                    <div class="modal-header" style="border-top-left-radius:8px; border-top-right-radius:8px;">
+                        <h5 class="modal-title" id="exampleModalLabel">Sepet</h5>
+                        <div class="col" align="right">
+                            <svg viewBox="0 0 576 512" width="20px" title="shopping-cart">
+                                <path d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z" />
+                            </svg>
+                            <span class="total-count" style="font-weight: bold; font-size: 20px;"></span>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="empty-contents">
+                            <div class="draw">
+                                <div class="cactus">
+                                    <div class="arm"></div>
+                                    <div class="arm"></div>
+                                </div>
+                                <div class="cactus">
+                                    <div class="arm"></div>
+                                    <div class="arm"></div>
+                                </div>
+                                <div class="cactus">
+                                    <div class="arm"></div>
+                                    <div class="arm"></div>
+                                </div>
+                                <div class="sky">
+                                    <div class="montain"></div>
+                                    <div class="montain two"></div>
+                                    <div class="sun"></div>
+                                </div>
+                            </div>
+                            <p class="no-items-text">SEPETİNİZDE ÜRÜN BULUNMAMAKTADIR</p>
+                        </div>
+                        <table class="show-cart table">
+                        </table>
+                        <div class="progress-bar"></div>
+                        <div class="cart-total"><strong>Toplam Tutar:</strong> <span class="total-cart"></span> ₺</div>
+                    </div>
+                    <div class="modal-footer" style="border-bottom-left-radius:8px; border-bottom-right-radius:8px;">
+                        <button id="clear" class="clear-cart btn btn-danger">Sepeti Temizle</button>
+                        <button id="order-now" type="button" class="btn btn-success">Şipariş Ver</button>
+                        <button id="accept" type="button" class="btn btn-success" style="display:none">Siparişi Tamamla</button>
+                    </div>
+                </div>
+                <div style="padding-top: 30px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FancyBox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- Your existing JavaScript code -->
+    <script src="script.js"></script>
+</body>
+</html>
